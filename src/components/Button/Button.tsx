@@ -27,11 +27,11 @@ const Button: React.FC<ButtonProps> = ({
       className={
         cn(
           base,
-          [
-            sizes[size],
-            variants[variant],
-            { 'disabled:opacity-50 cursor-not-allowed': disabled }
-          ]
+          sizes[size],
+          {
+            [variants[variant].enabled]: !disabled,
+            [variants[variant].disabled]: disabled
+          }
         )
       }
       disabled
