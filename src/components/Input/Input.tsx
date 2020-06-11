@@ -3,22 +3,24 @@ import cn from 'classnames';
 
 type InputProps = {
   type?: 'text' | 'number',
-  size?: 'default' | 'sm',
+  size?: 'sm' | 'md',
+  id: string,
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const sizes = {
-  default: 'px-5 py-3',
-  sm: 'text-sm px-2 py-1',
+enum Sizes {
+  sm = 'text-sm px-2 py-1',
+  md = 'px-5 py-3',
 }
 
 const Input: React.FC<InputProps> = ({
   type = 'text',
-  size = 'default',
+  size = 'md',
+  id,
   ...props
 }) => {
   return (
-    <input {...props} type={type} className={cn('border rounded', [sizes[size]])} />
+    <input {...props} id={id} type={type} className={cn('border rounded', [Sizes[size]])} />
   )
 }
 

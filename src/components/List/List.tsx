@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 const List: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <ul className="c-list">
-    {React.Children.map(children, child => <li className="c-list__item">{child}</li>)}
+  return <ul className="divide-y divide-gray-300">
+    {React.Children.map(children, child => <li className="py-3">{child}</li>)}
   </ul>
 }
 
