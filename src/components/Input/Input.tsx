@@ -1,26 +1,29 @@
 import * as React from 'react';
 import cn from 'classnames';
 
+import { base, sizes } from './styles';
+
 type InputProps = {
-  type?: 'text' | 'number',
-  size?: 'sm' | 'md',
-  id: string,
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  size?: keyof typeof sizes,
+  name: string,
+  isInvalid?: boolean
 }
 
-enum Sizes {
-  sm = 'text-sm px-2 py-1',
-  md = 'px-5 py-3',
-}
-
-const Input: React.FC<InputProps> = ({
-  type = 'text',
+const Input: React.FC<InputProps & React.HTMLAttributes<HTMLInputElement>> = ({
   size = 'md',
-  id,
+  isInvalid,
   ...props
 }) => {
   return (
-    <input {...props} id={id} type={type} className={cn('border rounded', [Sizes[size]])} />
+    <input
+      {...props} className={cn(
+        base,
+        sizes[size],
+        {
+          'border-red-700': isInvalid
+        }
+      )}
+    />
   )
 }
 
