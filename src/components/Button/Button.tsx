@@ -6,13 +6,10 @@ import { base, sizes, variants } from './styles';
 type ButtonProps = {
   size?: keyof typeof sizes,
   variant?: keyof typeof variants,
-  type?: 'button' | 'submit',
-  disabled?: boolean,
   children: React.ReactNode,
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
   size = 'md',
   variant = 'primary',
   type = 'button',
