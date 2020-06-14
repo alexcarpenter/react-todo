@@ -4,10 +4,10 @@ import cn from 'classnames';
 import { base, sizes } from './styles';
 
 type InputProps = {
-  size?: keyof typeof sizes,
-  name: string,
-  isInvalid?: boolean
-}
+  size?: keyof typeof sizes;
+  name: string;
+  isInvalid?: boolean;
+};
 
 const Input: React.FC<InputProps & React.HTMLAttributes<HTMLInputElement>> = ({
   size = 'md',
@@ -16,15 +16,12 @@ const Input: React.FC<InputProps & React.HTMLAttributes<HTMLInputElement>> = ({
 }) => {
   return (
     <input
-      {...props} className={cn(
-        base,
-        sizes[size],
-        {
-          'border-red-700': isInvalid
-        }
-      )}
+      {...props}
+      className={cn(base, sizes[size], {
+        'border-red-700': isInvalid,
+      })}
     />
-  )
-}
+  );
+};
 
 export default Input;
