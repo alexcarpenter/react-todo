@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Box } from './components/Box';
 import { Button } from './components/Button';
 import { Container } from './components/Container';
 import { Input } from './components/Input';
@@ -10,6 +11,9 @@ function App() {
   return (
     <>
       <Container>
+        <Box mt={5} mb={5}>
+          Box
+        </Box>
         <div className="flex items-end space-x-4 mb-4">
           <RadioGroup>
             <Radio name="filter" value="all" disabled>
