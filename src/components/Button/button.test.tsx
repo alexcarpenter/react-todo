@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
 import { Button } from './';
-import { sizes, variants } from './styles';
+import { sizes, variants } from './button.styles';
 
 test('button variants', () => {
   const { getByText } = render(<Button variant="primary">Button text</Button>);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 
-import { Displays, SpacingScale } from '../theme';
+import { Displays, SpacingScale } from '../types';
 
 type BoxOwnProps = {
   /**
@@ -18,12 +18,12 @@ type BoxOwnProps = {
    * Control the horizontal space between elements using the space-x-{amount} utilities.
    * @default null
    */
-  sx?: SpacingScale | SpacingScale[];
+  sx?: Exclude<SpacingScale, "auto"> | Exclude<SpacingScale, "auto">[];
   /**
    * Control the vertical space between elements using the space-y-{amount} utilities.
    * @default null
    */
-  sy?: SpacingScale | SpacingScale[];
+  sy?: Exclude<SpacingScale, "auto"> | Exclude<SpacingScale, "auto">[];
 };
 
 const Box: React.FC<BoxOwnProps> = ({

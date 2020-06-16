@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 
-import { base, sizes, variants } from './styles';
+import { base, sizes, variants } from './button.styles';
 
 type ButtonOwnProps = {
   size?: keyof typeof sizes;

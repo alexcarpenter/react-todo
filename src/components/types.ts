@@ -15,6 +15,7 @@ export type Displays =
   | ' table-cell';
 
 export type SpacingScale =
+  | 'auto'
   | 0
   | 1
   | 2
