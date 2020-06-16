@@ -1,5 +1,5 @@
 export const base =
-  'transition duration-300 ease-in-out text-white border inline-flex items-center flex-shrink-0 space-x-2 focus:outline-none focus:shadow-outline';
+  'transition duration-300 ease-in-out text-white border inline-flex justify-center items-center flex-shrink-0 space-x-2 focus:outline-none focus:shadow-outline';
 
 export const sizes = {
   sm: 'px-2 py-1 text-sm rounded-sm',

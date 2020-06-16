@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
+
 import { ArrowDownCircle } from 'react-feather';
 import { Button } from './';
-
-export default { title: 'Button' };
 
 storiesOf('Button/Primary', module)
   .add('Enabled', () => <Button>Hello world</Button>)
@@ -29,6 +28,11 @@ storiesOf('Button/Secondary', module)
   ))
   .add('With icon', () => (
     <Button variant="secondary">
+      <ArrowDownCircle /> <span>Hello world</span>
+    </Button>
+  ))
+  .add('Full width', () => (
+    <Button variant="secondary" fill>
       <ArrowDownCircle /> <span>Hello world</span>
     </Button>
   ));
