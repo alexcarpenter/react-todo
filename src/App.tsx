@@ -4,7 +4,7 @@ import { Box } from './components/Box';
 function App() {
   return (
     <>
-      <Box as="article" display="flex" sx={4}>
+      <Box>
         <div>Children</div>
         <div>Children</div>
       </Box>
