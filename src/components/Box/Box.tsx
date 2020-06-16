@@ -1,46 +1,44 @@
 import * as React from 'react';
 import cn from 'classnames';
 
-type SpacingProps = {
-  mt?: number;
-  mr?: number;
-  mb?: number;
-  ml?: number;
-  mx?: number;
-  my?: number;
-  pt?: number;
-  pr?: number;
-  pb?: number;
-  pl?: number;
-  px?: number;
-  py?: number;
+import { Displays, SpacingScale } from '../theme';
+
+type BoxOwnProps = {
+  /**
+   * Define the element type
+   * @default 'div'
+   */
+  as?: React.ElementType;
+  /**
+   * Control the display box type of an element.
+   * @default null
+   */
+  display?: Displays | Displays[];
+  /**
+   * Control the horizontal space between elements using the space-x-{amount} utilities.
+   * @default null
+   */
+  sx?: SpacingScale | SpacingScale[];
+  /**
+   * Control the vertical space between elements using the space-y-{amount} utilities.
+   * @default null
+   */
+  sy?: SpacingScale | SpacingScale[];
 };
 
-type BoxProps = {
-  as?: any;
-};
-
-const Box: React.FC<SpacingProps & BoxProps> = ({
+const Box: React.FC<BoxOwnProps> = ({
   as: Component = 'div',
+  display,
+  sx,
+  sy,
   children,
-  ...props
 }) => {
-  const { mt, mr, mb, ml, mx, my, pt, pr, pb, pl, px, py } = props;
   return (
     <Component
       className={cn({
-        [`mt-${mt}`]: mt,
-        [`mr-${mr}`]: mr,
-        [`mb-${mb}`]: mb,
-        [`ml-${ml}`]: ml,
-        [`mx-${mx}`]: mx,
-        [`my-${my}`]: my,
-        [`pt-${pt}`]: pt,
-        [`pr-${pr}`]: pr,
-        [`pb-${pb}`]: pb,
-        [`pl-${pl}`]: pl,
-        [`px-${px}`]: px,
-        [`py-${py}`]: py,
+        [`${display}`]: display,
+        [`space-x-${sx}`]: sx,
+        [`space-y-${sy}`]: sy,
       })}
     >
       {children}

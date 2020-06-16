@@ -3,17 +3,15 @@ import cn from 'classnames';
 
 import { base, sizes } from './styles';
 
-type InputProps = {
+type InputOwnProps = {
   size?: keyof typeof sizes;
   name: string;
   isInvalid?: boolean;
 };
 
-const Input: React.FC<InputProps & React.HTMLAttributes<HTMLInputElement>> = ({
-  size = 'md',
-  isInvalid,
-  ...props
-}) => {
+const Input: React.FC<
+  InputOwnProps & React.HTMLAttributes<HTMLInputElement>
+> = ({ size = 'md', isInvalid, ...props }) => {
   return (
     <input
       {...props}

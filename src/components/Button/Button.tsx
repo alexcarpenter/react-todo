@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { base, sizes, variants } from './styles';
 
-type ButtonProps = {
+type ButtonOwnProps = {
   size?: keyof typeof sizes;
   variant?: keyof typeof variants;
   outlined?: boolean;
@@ -11,7 +11,7 @@ type ButtonProps = {
 };
 
 const Button: React.FC<
-  ButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+  ButtonOwnProps & React.ButtonHTMLAttributes<HTMLButtonElement>
 > = ({
   size = 'md',
   variant = 'primary',
@@ -25,13 +25,13 @@ const Button: React.FC<
     <button
       {...props}
       type={type}
+      disabled={disabled}
       className={cn(base, sizes[size], {
         [variants[variant].enabled]: !disabled && !outlined,
         [variants[variant].disabled]: disabled && !outlined,
         [variants[variant].outlined]: !disabled && outlined,
         [variants[variant].outlinedDisabled]: disabled && outlined,
       })}
-      disabled
     >
       {children}
     </button>
