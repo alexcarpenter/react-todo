@@ -2,7 +2,6 @@ import * as React from 'react';
 import cn from 'classnames';
 
 import { base, sizes, variants } from './styles';
-import { Z_BLOCK } from 'zlib';
 
 type ButtonOwnProps = {
   size?: keyof typeof sizes;
