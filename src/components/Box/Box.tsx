@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { Displays, SpacingScale } from '../types';
 
-type BoxOwnProps = {
+interface Props {
   /**
    * Define the element type
    * @default 'div'
@@ -26,7 +26,7 @@ type BoxOwnProps = {
   sy?: Exclude<SpacingScale, "auto"> | Exclude<SpacingScale, "auto">[];
 };
 
-const Box: React.FC<BoxOwnProps> = ({
+const Box: React.FC<Props> = ({
   as: Component = 'div',
   display,
   sx,

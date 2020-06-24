@@ -32,7 +32,7 @@ storiesOf('Button/Secondary', module)
     </Button>
   ))
   .add('Full width', () => (
-    <Button variant="secondary" fill>
+    <Button variant="secondary" block>
       <ArrowDownCircle /> <span>Hello world</span>
     </Button>
   ));

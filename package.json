@@ -11,13 +11,15 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/uuid": "^8.0.0",
     "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-scripts": "3.4.1",
     "ts-enum-util": "^4.0.2",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "uuid": "^8.1.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 4000 -c .storybook",
@@ -45,12 +47,15 @@
     "@babel/core": "^7.10.2",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "@types/storybook__react": "^5.2.1",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "react-storybook-addon-props-combinations": "^1.1.0"
+    "react-storybook-addon-props-combinations": "^1.1.0",
+    "storybook-addon-jsx": "^7.3.0"
   }
 }

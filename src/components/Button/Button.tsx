@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { base, sizes, variants } from './button.styles';
 
-type ButtonOwnProps = {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: keyof typeof sizes;
   variant?: keyof typeof variants;
   outlined?: boolean;
@@ -11,17 +11,15 @@ type ButtonOwnProps = {
    * Make button fill its available space
    * @default false
    */
-  fill?: boolean;
+  block?: boolean;
   children: React.ReactNode;
 };
 
-const Button: React.FC<
-  ButtonOwnProps & React.ButtonHTMLAttributes<HTMLButtonElement>
-> = ({
+const Button: React.FC<Props> = ({
   size = 'md',
   variant = 'primary',
   outlined = false,
-  fill = false,
+  block = false,
   type = 'button',
   disabled = false,
   children,
@@ -33,7 +31,7 @@ const Button: React.FC<
       type={type}
       disabled={disabled}
       className={cn(base, sizes[size], {
-        'w-full': fill,
+        'w-full': block,
         [variants[variant].enabled]: !disabled && !outlined,
         [variants[variant].disabled]: disabled && !outlined,
         [variants[variant].outlined]: !disabled && outlined,

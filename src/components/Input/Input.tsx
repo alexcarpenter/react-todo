@@ -3,15 +3,13 @@ import cn from 'classnames';
 
 import { base, sizes } from './styles';
 
-type InputOwnProps = {
+interface Props extends React.HTMLAttributes<HTMLInputElement> {
   size?: keyof typeof sizes;
   name: string;
   isInvalid?: boolean;
 };
 
-const Input: React.FC<
-  InputOwnProps & React.HTMLAttributes<HTMLInputElement>
-> = ({ size = 'md', isInvalid, ...props }) => {
+const Input: React.FC<Props> = ({ size = 'md', isInvalid, ...props }) => {
   return (
     <input
       {...props}

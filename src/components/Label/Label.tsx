@@ -1,12 +1,12 @@
 import * as React from 'react';
 import cn from 'classnames';
 
-const Label: React.FC<
-  {
-    hidden?: boolean;
-    isRequired?: boolean;
-  } & React.HTMLProps<HTMLLabelElement>
-> = ({ children, hidden = false, isRequired = false, ...props }) => {
+interface Props extends React.HTMLProps<HTMLLabelElement> {
+  hidden?: boolean;
+  isRequired?: boolean;
+}
+
+const Label: React.FC<Props> = ({ children, hidden = false, isRequired = false, ...props }) => {
   return (
     <label
       {...props}
