@@ -1,5 +1,19 @@
 export type Breakpoints = 'sm' | 'md' | 'lg' | 'xl';
 
+export type AlignItems =
+  | 'stretch'
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'baseline';
+
+export type JustifyContent =
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'between'
+  | 'around';
+
 export type Displays =
   | 'hidden'
   | 'block'
@@ -34,3 +48,7 @@ export type SpacingScale =
   | 48
   | 56
   | 64;
+
+export type Todo = {
+
+}

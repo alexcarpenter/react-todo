@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 
-import { Displays, SpacingScale } from '../types';
+import { AlignItems, Displays, SpacingScale, JustifyContent } from '../types';
 
 interface Props {
   /**
@@ -11,9 +11,20 @@ interface Props {
   as?: React.ElementType;
   /**
    * Control the display box type of an element.
+   * @link https://tailwindcss.com/docs/display
    * @default null
    */
   display?: Displays | Displays[];
+  /**
+   * Align items
+   * @link https://tailwindcss.com/docs/align-items/
+   */
+  align?: AlignItems | AlignItems[];
+  /**
+   * Justify content
+   * @link https://tailwindcss.com/docs/justify-content/
+   */
+  justify?: JustifyContent | JustifyContent[];
   /**
    * Control the horizontal space between elements using the space-x-{amount} utilities.
    * @default null
@@ -29,6 +40,8 @@ interface Props {
 const Box: React.FC<Props> = ({
   as: Component = 'div',
   display,
+  align,
+  justify,
   sx,
   sy,
   children,
@@ -37,6 +50,8 @@ const Box: React.FC<Props> = ({
     <Component
       className={cn({
         [`${display}`]: display,
+        [`items-${align}`]: align,
+        [`justify-${justify}`]: justify,
         [`space-x-${sx}`]: sx,
         [`space-y-${sy}`]: sy,
       })}

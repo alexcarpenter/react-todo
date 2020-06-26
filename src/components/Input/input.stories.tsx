@@ -6,5 +6,5 @@ export default { title: 'Input' };
 
 storiesOf('Input', module)
   .add('Default', () => <Input name="fName" />)
-  .add('Small', () => <Input name="fName" size="sm" />)
+  .add('Small', () => <Input name="fName" inputSize="sm" />)
   .add('Invalid', () => <Input name="fName" isInvalid={true} />);
