@@ -49,6 +49,8 @@ export type SpacingScale =
   | 56
   | 64;
 
-export type Todo = {
-
+interface ITodo {
+  id: string;
+  value: string;
+  completed: boolean;
 }

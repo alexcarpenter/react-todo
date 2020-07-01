@@ -3,12 +3,7 @@ import { XCircle } from 'react-feather';
 
 import { Box } from '../Box';
 import { Checkbox } from '../Checkbox';
-
-interface ITodo {
-  id: string;
-  value: string;
-  completed: boolean;
-}
+import { ITodo } from '../../types';
 
 interface ITodoProps {
   todo: ITodo;

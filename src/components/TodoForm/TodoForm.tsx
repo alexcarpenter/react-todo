@@ -12,6 +12,7 @@ interface ITodoForm {
 
 const TodoForm: React.FC<ITodoForm> = (props) => {
   const [value, setValue] = React.useState('');
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -20,6 +21,9 @@ const TodoForm: React.FC<ITodoForm> = (props) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     props.onSubmit(value);
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
     setValue('');
   }
 
@@ -28,7 +32,7 @@ const TodoForm: React.FC<ITodoForm> = (props) => {
       <Box display="flex" align="end" sx={4}>
         <FormControl>
           <Label htmlFor="newTodo" hidden>Add todo</Label>
-          <Input id="newTodo" value={value} onChange={handleChange} />
+          <Input ref={inputRef} id="newTodo" value={value} onChange={handleChange} />
         </FormControl>
         <Button type="submit" disabled={value.length === 0}>Add todo</Button>
       </Box>

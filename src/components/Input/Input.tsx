@@ -8,22 +8,27 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   isInvalid?: boolean;
 };
 
-const Input: React.FC<Props> = ({
-  id,
-  inputSize = 'md',
-  isInvalid,
-  ...props
-}: Props) => {
-  return (
-    <input
-      {...props}
-      id={id}
-      name={id}
-      className={cn(base, sizes[inputSize], {
-        'border-red-700': isInvalid,
-      })}
-    />
-  );
-};
+const Input = React.forwardRef<any, Props>(
+  (
+    {
+      id,
+      inputSize = 'md',
+      isInvalid,
+      ...props
+    },
+    ref
+  ) => {
+    return (
+      <input
+        {...props}
+        id={id}
+        name={id}
+        ref={ref}
+        className={cn(base, sizes[inputSize], {
+          'border-red-700': isInvalid,
+        })}
+      />
+    );
+  });
 
 export default Input;

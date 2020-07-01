@@ -6,12 +6,7 @@ import { Container } from './components/Container';
 import { List } from './components/List';
 import { Todo } from './components/Todo';
 import { TodoForm } from './components/TodoForm';
-
-interface ITodo {
-  id: string,
-  value: string,
-  completed: boolean
-}
+import { ITodo } from './types';
 
 const initialTodos: ITodo[] = [
   { id: uuid(), value: 'Call mom', completed: false },
@@ -20,7 +15,7 @@ const initialTodos: ITodo[] = [
 ]
 
 function App() {
-  // const [filter, setfilter] = React.useState('');
+  const [filter, setFilter] = React.useState('all');
   const [todos, setTodos] = React.useState(initialTodos);
 
   function addTodo(value: string) {
@@ -52,6 +47,12 @@ function App() {
     <Container>
       <Box sy={6}>
         <TodoForm onSubmit={value => addTodo(value)} />
+        {/* <fieldset>
+          <legend>Filter todos</legend>
+          <label htmlFor="all"><input type="radio" name="filter" id="all" checked={filter === 'all'} onChange={() => { }} />All</label>
+          <label htmlFor="active"><input type="radio" name="filter" id="active" checked={filter === 'active'} onChange={() => { }} />Active</label>
+          <label htmlFor="completed"><input type="radio" name="filter" id="completed" checked={filter === 'completed'} onChange={() => { }} />Completed</label>
+        </fieldset> */}
         <List>
           {todos.map((todo) => (
             <Todo

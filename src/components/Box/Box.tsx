@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 
-import { AlignItems, Displays, SpacingScale, JustifyContent } from '../types';
+import { AlignItems, Displays, SpacingScale, JustifyContent } from '../../types';
 
 interface Props {
   /**
