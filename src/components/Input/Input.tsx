@@ -8,7 +8,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   isInvalid?: boolean;
 };
 
-const Input = React.forwardRef<any, Props>(
+const Input = React.forwardRef<HTMLInputElement, Props>(
   (
     {
       id,
